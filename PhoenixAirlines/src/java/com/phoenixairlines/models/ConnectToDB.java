@@ -9,7 +9,7 @@ public class ConnectToDB {
     public static Connection createConnection() {
         Connection con = null;
         String driver = "com.mysql.jdbc.Driver";
-        String url = "jdbc:mysql://localhost:3306/phoenix_airlines";
+        String url = "jdbc:mysql://localhost:3306/phoenixairlines_db";
         String username = "root";
         String password = "";
 

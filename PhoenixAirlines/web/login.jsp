@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
         <title>Phoenix Airlines</title>
-        <link href="assets/main.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/main.css" rel="stylesheet" type="text/css">
     </head>
 
     <body>
@@ -29,8 +29,8 @@
                 <span>Use your username and password</span>
                 <input type="text" placeholder="Username" name="username" />
                 <input type="password" placeholder="Password" name="password" />
-                <span style="color:red">
-                    <%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage")%>
+                <%=(request.getAttribute("errMessage") == "User is registered") ? "<span style = 'color:green'>" : "<span style = 'color:red'>"%>
+                <%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage")%>
                 </span>
                 <a href="#">Forgot your password?</a>
                 <button type="submit" value="Login">Sign In</button>
@@ -51,7 +51,7 @@
             </div>
         </div>
     </div>
-    <script src="assets/signin-signup.js"></script>
+    <script src="assets/js/signin-signup.js"></script>
 </body>
 
 </html>

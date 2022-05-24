@@ -39,6 +39,15 @@
     </style>
     <footer>
         <div class="inner-width">
+            
+                  <ul class="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Flight Info</a></li>
+        <li><a href="#">Ticket Reservation</a></li>
+        <li><a href="#">Sign Up</a></li>
+        <li><a href="#">login</a></li>
+      </ul>
+            
             <div class="copyright">
                 &copy;2022 || Designed by IT CROWD
             </div>

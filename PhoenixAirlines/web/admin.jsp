@@ -29,6 +29,12 @@
         <%}%>
         <body>
             <jsp:include page="assets/navbar.jsp" />  
+
+            <%
+                if ((request.getAttribute("monitor_table") == null)) {
+                    request.getRequestDispatcher("AdminDCServlet").forward(request, response);
+                }
+            %>
             <div class="jumbotron">
                 <div class="container text-center">
                     <h1>Admin Dashboard</h1>
@@ -39,79 +45,111 @@
                 </div>
             </div>
             <!--when page loads show user monitor table-->
-            <form name="monitor" action="<%=request.getContextPath()%>/AdminDCServlet" method="POST">
-                <input type="submit" value="Monitor" name="monitor"  />
-            </form>
-            <%
-                if ((request.getAttribute("dc") != null)) {
-                    List list = new ArrayList();
-                    list = (List) request.getAttribute("dc");
-                    Iterator it = list.iterator();
-                    while (it.hasNext()) {
-                        out.println(it.next());
-                    }
-                }
 
-            %>
-            <form action="SearchUsersServlet" method="POST">
-                <h3>View Users</h3>
-                <input type="text" name="search_user" value="" />
-                <select name="search_type">
-                    <option value="email">Email</option>
-                    <option value="username">Username</option>
-                </select>
-                <input type="submit" value="View Users" name="view_users" />
-            </form>
-            <%            if ((request.getAttribute("result") != null)) {
-                    List user_list = new ArrayList();
-                    user_list = (List) request.getAttribute("result");
-                    Iterator it = user_list.iterator();
-                    while (it.hasNext()) {
-                        out.println(it.next());
-                    }
-                }
+            <table border="1">
+                <thead>
+                </thead>
+                <tbody>
+                    <%
+                        if ((request.getAttribute("approve_table") != null)) {
+                            List data = new ArrayList();
+                            data = (List) request.getAttribute("approve_table");
+                            Iterator itr = data.iterator();
+                            while (itr.hasNext()) {
+                    %>
+                <form action="ApproveServlet" method="POST">
+                    <tr>
+                    <input type="hidden" name="user_id" value="<%=itr.next()%>" />
+                    <td><%=itr.next()%></td>
+                    <td><%=itr.next()%></td>
+                    <td><%=itr.next()%></td>
+                    <td>
+                        <input type="submit" value="Approve" />
+                    </td>
+                    </tr>
+                </form>
+                <%}
+                    }%>
+            </tbody>
+        </table>
 
-            %>
-            <div class="container-fluid bg-3 text-center">
-                <h3>Number Of Active Requests</h3><br>
-                <div class="row">
-                    <div class="col-sm-3">
-                        <p>Some text..</p>
-                        <img src="logo1.jpg" class="img-responsive" style="width:100%" alt="Image">
-                    </div>
-                    <div class="col-sm-3">
-                        <p>Some text..</p>
-                        <img src="logo1.jpg" class="img-responsive" style="width:100%" alt="Image">
-                    </div>
-                    <div class="col-sm-3">
-                        <p>Some text..</p>
-                        <img src="logo1.jpg" class="img-responsive" style="width:100%" alt="Image">
-                    </div>
-                    <div class="col-sm-3">
-                        <p>Some text..</p>
-                        <img src="logo1.jpg" class="img-responsive" style="width:100%" alt="Image">
-                    </div>
+
+
+        <form action="SearchUsers_aServlet" method="POST">
+            <h3>View Users</h3>
+            <input type="text" name="search_user" value="" />
+            <select name="search_type">
+                <option value="email">Email</option>
+                <option value="username">Username</option>
+            </select>
+            <input type="submit" value="View Users" name="view_users" />
+        </form>
+
+        <table border="1">
+            <thead>
+            </thead>
+            <tbody>
+                <%
+                    if ((request.getAttribute("monitor_table") != null)) {
+                        List data = new ArrayList();
+                        data = (List) request.getAttribute("monitor_table");
+                        Iterator itr = data.iterator();
+                        while (itr.hasNext()) {
+                %>
+                <tr>
+                    <td><%=itr.next()%></td>
+                    <td><%=itr.next()%></td>
+                    <td><%=itr.next()%></td>
+                    <td><%=itr.next()%></td>
+                    <td><%=itr.next()%></td>
+                    <td><%=itr.next()%></td>
+                    <td><%=itr.next()%></td>
+                </tr>
+                <%}
+                    }%>
+            </tbody>
+        </table>
+
+        <div class="container-fluid bg-3 text-center">
+            <h3>Number Of Active Requests</h3><br>
+            <div class="row">
+                <div class="col-sm-3">
+                    <p>Some text..</p>
+                    <img src="logo1.jpg" class="img-responsive" style="width:100%" alt="Image">
                 </div>
-            </div><br>
-            <div class="container-fluid bg-3 text-center">
-                <div class="row">
-                    <div class="col-sm-3">
-                        <p>Some text..</p>
-                        <img src="logo1.jpg" class="img-responsive" style="width:100%" alt="Image">
-                    </div>
-                    <div class="col-sm-3">
-                        <p>Some text..</p>
-                        <img src="logo1.jpg" class="img-responsive" style="width:100%" alt="Image">
-                    </div>
-                    <div class="col-sm-3">
-                        <p>Some text..</p>
-                        <img src="logo1.jpg" class="img-responsive" style="width:100%" alt="Image">
-                    </div>
-                    <div class="col-sm-3">
-                        <p>Some text..</p>
-                        <img src="logo1.jpg" class="img-responsive" style="width:100%" alt="Image">
-                    </div>
+                <div class="col-sm-3">
+                    <p>Some text..</p>
+                    <img src="logo1.jpg" class="img-responsive" style="width:100%" alt="Image">
+                </div>
+                <div class="col-sm-3">
+                    <p>Some text..</p>
+                    <img src="logo1.jpg" class="img-responsive" style="width:100%" alt="Image">
+                </div>
+                <div class="col-sm-3">
+                    <p>Some text..</p>
+                    <img src="logo1.jpg" class="img-responsive" style="width:100%" alt="Image">
                 </div>
             </div>
-            <jsp:include page="assets/footer.jsp" />  
-        </body>
+        </div><br>
+        <div class="container-fluid bg-3 text-center">
+            <div class="row">
+                <div class="col-sm-3">
+                    <p>Some text..</p>
+                    <img src="logo1.jpg" class="img-responsive" style="width:100%" alt="Image">
+                </div>
+                <div class="col-sm-3">
+                    <p>Some text..</p>
+                    <img src="logo1.jpg" class="img-responsive" style="width:100%" alt="Image">
+                </div>
+                <div class="col-sm-3">
+                    <p>Some text..</p>
+                    <img src="logo1.jpg" class="img-responsive" style="width:100%" alt="Image">
+                </div>
+                <div class="col-sm-3">
+                    <p>Some text..</p>
+                    <img src="logo1.jpg" class="img-responsive" style="width:100%" alt="Image">
+                </div>
+            </div>
+        </div>
+        <jsp:include page="assets/footer.jsp" />  
+    </body>

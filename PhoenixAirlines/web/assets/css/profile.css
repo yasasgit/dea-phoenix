@@ -1,0 +1,106 @@
+
+:root
+{
+   --blue:#05445e;
+   --white:#fff;
+   --gray:#f5f5f5;
+   --black1:#222;
+   --black2:#999;
+}
+
+/*=========user management============*/
+
+
+.details .recent
+{
+    position: relative;
+    display:grid;
+    min-height: 500px;
+    background:var(--white);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    border-radius: 20px;
+}
+
+.details .cardheader
+{
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cardheader h2
+{
+    font-weight: 600;
+    color:var(--blue);
+}
+
+.cardheader .btn
+{
+    position: relative;
+    padding:5px 10px;
+    background: var(--blue);
+    text-decoration: none;
+    color:var(--white);
+    border-radius:6px ;
+}
+
+.details table
+{
+    width:100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+
+td{
+    text-align: center;
+}
+.details table thead td
+{
+    font-weight: 600;
+    
+}
+
+.details .recent table tr
+{
+    color:var(--black1);
+    border-bottom:1px solid rgba(0,0,0,0.2);
+    
+}
+
+.details .recent table tr:last-child
+{
+    border-bottom: none;
+}
+.details .recent table tbody tr:hover
+{
+    background: var(--blue);
+    color:var(--white);
+    
+    
+}
+
+.details .recent table tr td
+{
+    padding:10px;
+    border-radius: 10px;
+    margin: 10px;
+    
+
+}
+
+.details .recent table tr td:last-child
+{
+    text-align: end;
+}
+
+.details .recent table tr td:nth-child(2)
+{
+    text-align: end;
+}
+
+.details .recent table tr td:nth-child(3)
+{
+    text-align: center;
+}
