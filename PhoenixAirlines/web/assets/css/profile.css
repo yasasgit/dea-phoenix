@@ -1,11 +1,11 @@
 
 :root
 {
-   --blue:#05445e;
-   --white:#fff;
-   --gray:#f5f5f5;
-   --black1:#222;
-   --black2:#999;
+    --blue:#05445e;
+    --white:#fff;
+    --gray:#f5f5f5;
+    --black1:#222;
+    --black2:#999;
 }
 
 /*=========user management============*/
@@ -59,14 +59,14 @@ td{
 .details table thead td
 {
     font-weight: 600;
-    
+
 }
 
 .details .recent table tr
 {
     color:var(--black1);
     border-bottom:1px solid rgba(0,0,0,0.2);
-    
+
 }
 
 .details .recent table tr:last-child
@@ -77,8 +77,8 @@ td{
 {
     background: var(--blue);
     color:var(--white);
-    
-    
+
+
 }
 
 .details .recent table tr td
@@ -86,7 +86,7 @@ td{
     padding:10px;
     border-radius: 10px;
     margin: 10px;
-    
+
 
 }
 

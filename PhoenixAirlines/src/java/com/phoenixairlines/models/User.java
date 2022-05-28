@@ -2,6 +2,7 @@ package com.phoenixairlines.models;
 
 public class User {
 
+    private int user_id;
     private String first_name;
     private String last_name;
     private String email;
@@ -13,6 +14,7 @@ public class User {
 
     public User(String first_name, String last_name, String email, String username, String password, String address, String phone_number, String role) {
         super();
+        this.user_id = user_id;
         this.first_name = first_name;
         this.last_name = last_name;
         this.email = email;
@@ -25,6 +27,14 @@ public class User {
 
     public User() {
         super();
+    }
+
+    public int getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
     }
 
     public String getFirst_name() {

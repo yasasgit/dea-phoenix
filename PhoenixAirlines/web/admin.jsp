@@ -10,10 +10,7 @@
             <title>Bootstrap Example</title>
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet" />
+
             <style>
                 /* Remove the navbar's bootstrap default margin-bottom and rounded borders */
                 .navbar {
@@ -29,7 +26,6 @@
         <%}%>
         <body>
             <jsp:include page="assets/navbar.jsp" />  
-
             <%
                 if ((request.getAttribute("monitor_table") == null)) {
                     request.getRequestDispatcher("AdminDCServlet").forward(request, response);
