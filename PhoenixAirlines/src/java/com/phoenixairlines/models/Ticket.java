@@ -18,10 +18,9 @@ public class Ticket {
         this.classId = classId;
     }
 
-    public Ticket() {
+    public Ticket(){
         super();
     }
-
     /**
      * @return the ticketId
      */
@@ -105,5 +104,7 @@ public class Ticket {
     public void setClassId(String classId) {
         this.classId = classId;
     }
+
+    
 
 }

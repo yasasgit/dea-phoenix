@@ -18,8 +18,8 @@ public class ApproveServlet extends HttpServlet {
         RegisterAccess access = new RegisterAccess();
         String result = access.approveUser(user_id);
         System.out.println(result);
-
-        RequestDispatcher rd = request.getRequestDispatcher("admin.jsp");
+        
+                RequestDispatcher rd = request.getRequestDispatcher("admin.jsp");
         rd.forward(request, response);
     }
 

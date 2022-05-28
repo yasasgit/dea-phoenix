@@ -68,13 +68,13 @@ public class DeleteTicketServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int ticketId = Integer.parseInt(request.getParameter("ticket_id_delete"));
-
+        
         HttpSession session = request.getSession();
         int userId = (int) session.getAttribute("user_id");
         System.out.println("user id from session " + userId);
         TicketDelete ticketBean = new TicketDelete();
 
-        String deleteResult = ticketBean.DeleteTicketDetails(ticketId, userId);
+        String deleteResult = ticketBean.DeleteTicketDetails(ticketId,userId);
         PrintWriter out = response.getWriter();
         out.println(deleteResult);
     }

@@ -80,13 +80,13 @@ public class UpdateTicketServlet extends HttpServlet {
         float price = 0;
         switch (classId) {
             case "101":
-                price = (float) (cost * 1.9) * seats;
+                price = (float) (cost * 1.9)*seats;
                 break;
             case "102":
-                price = (float) (cost * 1.5) * seats;
+                price = (float) (cost * 1.5)*seats;
                 break;
             default:
-                price = cost * seats;
+                price = cost*seats;
                 break;
         }
         HttpSession session = request.getSession();
@@ -95,7 +95,7 @@ public class UpdateTicketServlet extends HttpServlet {
 
         Ticket ticketBean = new Ticket();
         TicketAccess updateTicket = new TicketAccess();
-        String updateResult = updateTicket.updateTicketDetails(ticketId, price, classId, seatId, userId);
+        String updateResult = updateTicket.updateTicketDetails(ticketId,price,classId,seatId,userId);
         PrintWriter out = response.getWriter();
         out.println(updateResult);
     }

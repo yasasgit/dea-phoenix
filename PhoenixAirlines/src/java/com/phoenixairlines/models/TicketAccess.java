@@ -21,7 +21,7 @@ public class TicketAccess {
         con = ConnectToDB.createConnection();
         try {
             statement = con.createStatement();
-            resultSet = statement.executeQuery("SELECT * FROM flight WHERE id='" + flightId + "';");
+            resultSet = statement.executeQuery("SELECT * FROM flight WHERE id='"+flightId+"';");
 
             while (resultSet.next()) {
                 String takeoff_airport = resultSet.getString("takeoff_airport");
@@ -60,7 +60,7 @@ public class TicketAccess {
         int flightId = ticketBean.getFlightId();
         int seatId = ticketBean.getSeatId();
         String classId = ticketBean.getClassId();
-
+        
         con = ConnectToDB.createConnection();
         try {
             statement = con.createStatement();
@@ -105,11 +105,11 @@ public class TicketAccess {
     }
 
     public List getSelectedTicketData(int ticketId) {
-        List TicketDetails = new ArrayList();
+                List TicketDetails = new ArrayList();
         con = ConnectToDB.createConnection();
         try {
             statement = con.createStatement();
-            resultSet = statement.executeQuery("SELECT flight.takeoff_airport,flight.takeoff_time,flight.takeoff_date,flight.landing_airport,flight.landing_time,flight.landing_date,flight.gate, class.id,class.type,seat.id,seat.seat_name,flight.cost FROM ticket INNER JOIN class ON ticket.class_ticket=class.id INNER JOIN seat ON ticket.seat_ticket=seat.id INNER JOIN flight ON ticket.flight_ticket=flight.id WHERE ticket.id='" + ticketId + "';");
+            resultSet = statement.executeQuery("SELECT flight.takeoff_airport,flight.takeoff_time,flight.takeoff_date,flight.landing_airport,flight.landing_time,flight.landing_date,flight.gate, class.id,class.type,seat.id,seat.seat_name,flight.cost FROM ticket INNER JOIN class ON ticket.class_ticket=class.id INNER JOIN seat ON ticket.seat_ticket=seat.id INNER JOIN flight ON ticket.flight_ticket=flight.id WHERE ticket.id='"+ticketId+"';");
 
             while (resultSet.next()) {
                 String takeoff_airport = resultSet.getString("flight.takeoff_airport");
@@ -125,6 +125,7 @@ public class TicketAccess {
                 String seatId = resultSet.getString("class.id");
                 String seatNumber = resultSet.getString("seat.seat_name");
 
+                
                 TicketDetails.add(ticketId);
                 TicketDetails.add(takeoff_airport);
                 TicketDetails.add(takeoff_time);
@@ -144,14 +145,13 @@ public class TicketAccess {
         }
         return TicketDetails;
     }
-
     //update ticket details method
-    public String updateTicketDetails(int ticketId, float price, String classId, int seatId, int userId) {
+    public String updateTicketDetails(int ticketId, float price, String classId, int seatId,int userId) {
 
         con = ConnectToDB.createConnection();
         try {
             statement = con.createStatement();
-            String updateQuery = "UPDATE ticket SET price='" + price + "',seat_ticket='" + seatId + "',class_ticket='" + classId + "' WHERE id='" + ticketId + "'AND user_ticket='" + userId + "'";
+            String updateQuery = "UPDATE ticket SET price='"+price+"',seat_ticket='"+seatId+"',class_ticket='"+classId+"' WHERE id='"+ticketId+"'AND user_ticket='"+userId+"'";
             i = statement.executeUpdate(updateQuery);
             con.close();
         } catch (SQLException ex) {
