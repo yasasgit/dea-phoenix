@@ -9,23 +9,23 @@
     </servlet>
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>com.phoenixairlines.controllers.LoginServlet</servlet-class>
+        <servlet-class>com.phoenixairlines.controllers.user.LoginServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>LogoutServlet</servlet-name>
-        <servlet-class>com.phoenixairlines.controllers.LogoutServlet</servlet-class>
+        <servlet-class>com.phoenixairlines.controllers.user.LogoutServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>RegisterServlet</servlet-name>
-        <servlet-class>com.phoenixairlines.controllers.RegisterServlet</servlet-class>
+        <servlet-class>com.phoenixairlines.controllers.user.RegisterServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>SearchUsers_sServlet</servlet-name>
-        <servlet-class>com.phoenixairlines.controllers.SearchUsers_sServlet</servlet-class>
+        <servlet-name>SearchUsersStaffServlet</servlet-name>
+        <servlet-class>com.phoenixairlines.controllers.user.SearchUsersStaffServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>AdminDCServlet</servlet-name>
-        <servlet-class>com.phoenixairlines.controllers.AdminDCServlet</servlet-class>
+        <servlet-name>AdminTableServlet</servlet-name>
+        <servlet-class>com.phoenixairlines.controllers.user.AdminTableServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>UpdateFlightInfoServlet</servlet-name>
@@ -60,12 +60,12 @@
         <servlet-class>com.phoenixairlines.controllers.ticket.DeleteTicketServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>SearchUsers_aServlet</servlet-name>
-        <servlet-class>com.phoenixairlines.controllers.SearchUsers_aServlet</servlet-class>
+        <servlet-name>SearchUsersAdminServlet</servlet-name>
+        <servlet-class>com.phoenixairlines.controllers.user.SearchUsersAdminServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ApproveServlet</servlet-name>
-        <servlet-class>com.phoenixairlines.controllers.ApproveServlet</servlet-class>
+        <servlet-class>com.phoenixairlines.controllers.user.ApproveServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>GetSelectedData</servlet-name>
@@ -88,16 +88,16 @@
         <url-pattern>/RegisterServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>SearchUsers_sServlet</servlet-name>
-        <url-pattern>/SearchUsers_sServlet</url-pattern>
+        <servlet-name>SearchUsersStaffServlet</servlet-name>
+        <url-pattern>/SearchUsersStaffServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>AdminDCServlet</servlet-name>
-        <url-pattern>/AdminDCServlet</url-pattern>
+        <servlet-name>AdminTableServlet</servlet-name>
+        <url-pattern>/AdminTableServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>UpdateFlightInfoServlet</servlet-name>
@@ -132,8 +132,8 @@
         <url-pattern>/DeleteTicketServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>SearchUsers_aServlet</servlet-name>
-        <url-pattern>/SearchUsers_aServlet</url-pattern>
+        <servlet-name>SearchUsersAdminServlet</servlet-name>
+        <url-pattern>/SearchUsersAdminServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ApproveServlet</servlet-name>

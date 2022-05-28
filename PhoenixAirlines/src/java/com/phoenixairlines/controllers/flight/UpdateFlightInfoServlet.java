@@ -11,8 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 
 public class UpdateFlightInfoServlet extends HttpServlet {
 
-    private static final long serialVersionUID = 1L;
-
     public UpdateFlightInfoServlet() {
         super();
     }
@@ -40,5 +38,4 @@ public class UpdateFlightInfoServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         out.println(result);
     }
-
 }

@@ -12,7 +12,7 @@ public class FlightAccess {
 
     Connection con;
     Statement statement;
-    int i;
+    int i = 0;
     ResultSet resultSet;
 
     public String InsertFlightDetails(Flight flightBean) {
@@ -141,7 +141,7 @@ public class FlightAccess {
         String takeoff_airport = flightBean.getTakeoff_airport();
         String landing_airport = flightBean.getLanding_airport();
 
-        //filter value accoridng to select category and 
+        //filter value accoridng to select category and
         try {
             statement = con.createStatement();
 

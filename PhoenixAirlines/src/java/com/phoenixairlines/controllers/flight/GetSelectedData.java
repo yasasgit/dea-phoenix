@@ -1,4 +1,5 @@
 package com.phoenixairlines.controllers.flight;
+
 import com.phoenixairlines.models.TicketAccess;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ public class GetSelectedData extends HttpServlet {
         String flight = request.getParameter("flightId");
         System.out.println(flight);
         int flightId = Integer.parseInt(flight);
-        
+
         //get flight details to form
         List selectedValues = new ArrayList();
         TicketAccess ticketaccess = new TicketAccess();
@@ -26,6 +27,7 @@ public class GetSelectedData extends HttpServlet {
         RequestDispatcher rd = request.getRequestDispatcher("AddReservationForm.jsp");
         rd.forward(request, response);
     }
+
     @Override
     public String getServletInfo() {
         return "Short description";

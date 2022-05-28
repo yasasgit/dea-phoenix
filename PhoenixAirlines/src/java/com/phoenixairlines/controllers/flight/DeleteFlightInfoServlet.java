@@ -10,8 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 
 public class DeleteFlightInfoServlet extends HttpServlet {
 
-    private static final long serialVersionUID = 1L;
-
     public DeleteFlightInfoServlet() {
         super();
     }
@@ -27,7 +25,5 @@ public class DeleteFlightInfoServlet extends HttpServlet {
         String result = flightAccess.DeleteFlightDetails(flightBean);
         PrintWriter out = response.getWriter();
         out.println(result);
-
     }
-
 }

@@ -27,10 +27,6 @@ public class Flight {
         this.aircraft_id = aircraft_id;
     }
 
-    public Flight() {
-        super();
-    }
-
     public Flight(String flight_id) {
         super();
         this.flight_id = flight_id;
@@ -41,6 +37,10 @@ public class Flight {
         this.takeoff_date = takeoff_date;
         this.landing_airport = landing_airport;
         this.takeoff_airport = takeoff_airport;
+    }
+
+    public Flight() {
+        super();
     }
 
     public String getFlight_id() {

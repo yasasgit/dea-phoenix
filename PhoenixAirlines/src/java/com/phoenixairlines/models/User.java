@@ -8,9 +8,17 @@ public class User {
     private String email;
     private String username;
     private String password;
-    private String address;
     private String phone_number;
+    private String address;
     private String role;
+    private int is_active;
+
+    private String login_time;
+    private String ip_address;
+
+    public User() {
+        super();
+    }
 
     public User(String first_name, String last_name, String email, String username, String password, String address, String phone_number, String role) {
         super();
@@ -25,8 +33,10 @@ public class User {
         this.role = role;
     }
 
-    public User() {
+    public User(String login_time, String ip_address, int user_session_id) {
         super();
+        this.login_time = login_time;
+        this.ip_address = ip_address;
     }
 
     public int getUser_id() {
@@ -99,5 +109,21 @@ public class User {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public String getLogin_time() {
+        return login_time;
+    }
+
+    public void setLogin_time(String login_time) {
+        this.login_time = login_time;
+    }
+
+    public String getIp_address() {
+        return ip_address;
+    }
+
+    public void setIp_address(String ip_address) {
+        this.ip_address = ip_address;
     }
 }
