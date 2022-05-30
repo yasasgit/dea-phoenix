@@ -1,3 +1,6 @@
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
 <%
     if ((request.getSession(false).getAttribute("admin") == null)) {
 %>
@@ -32,9 +35,9 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="admin_dashboard.jsp">Dashboard</a></li>
+                    <li><a href="admin_dashboard.jsp">Dashboard</a></li>
                     <li><a href="admin_approve_table.jsp">Approve Staff</a></li>
-                    <li><a href="admin_monitor_table.jsp">Monitor Users</a></li>
+                    <li class="active"><a href="admin_monitor_table.jsp">Monitor Users</a></li>
                     <li><a href="all_profile.jsp">Profile</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -51,4 +54,48 @@
             </p>
         </div>
     </div>
+    <%
+        if ((request.getAttribute("monitor_table") == null)) {
+            request.getRequestDispatcher("MonitorTableServlet").forward(request, response);
+        }
+    %>
+    <form action="SearchUserTableServlet" method="POST">
+        <input type="text" name="search_user" value="" />
+        <select name="search_type">
+            <option value="email">Email</option>
+            <option value="username">Username</option>
+        </select>
+        <input type="submit" value="View Users" name="view_users" />
+    </form>
+    <%if ((request.getAttribute("monitor_table") != null)) {
+            List data = new ArrayList();
+            data = (List) request.getAttribute("monitor_table");
+            Iterator itr = data.iterator();%>
+    <table border="1">
+        <thead>
+        <th>First Name</th>
+        <th>Last Name </th>
+        <th>Email</th>
+        <th>Username</th>
+        <th>User Type</th>
+        <th>IP Address</th>
+        <th>Login Time</th>
+    </thead>
+    <tbody>
+        <%while (itr.hasNext()) {%>
+        <tr>
+            <td><%=itr.next()%></td>
+            <td><%=itr.next()%></td>
+            <td><%=itr.next()%></td>
+            <td><%=itr.next()%></td>
+            <td><%=itr.next()%></td>
+            <td><%=itr.next()%></td>
+            <td><%=itr.next()%></td>
+        </tr>
+        <%}
+            }%>
+    </tbody>
+</table>
+
+</body>
 </html>

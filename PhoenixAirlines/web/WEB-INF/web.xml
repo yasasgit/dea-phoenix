@@ -4,148 +4,178 @@
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
     <servlet>
-        <servlet-name>AddFlightInfoServlet</servlet-name>
-        <servlet-class>com.phoenixairlines.controllers.flight.AddFlightInfoServlet</servlet-class>
+        <servlet-name>CreateFlightServlet</servlet-name>
+        <servlet-class>com.phoenixairlines.flightmanagement.controllers.CreateFlightServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ApproveTableServlet</servlet-name>
+        <servlet-class>com.phoenixairlines.usermanagement.controllers.ApproveTableServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateFlightServlet</servlet-name>
+        <url-pattern>/CreateFlightServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchFlightTableServlet</servlet-name>
+        <url-pattern>/SearchFlightTableServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>SearchFlightTableServlet</servlet-name>
+        <servlet-class>com.phoenixairlines.flightmanagement.controllers.SearchFlightTableServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteFlightServlet</servlet-name>
+        <servlet-class>com.phoenixairlines.flightmanagement.controllers.DeleteFlightServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteFlightServlet</servlet-name>
+        <url-pattern>/DeleteFlightServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>DefaultFlightTableServlet</servlet-name>
+        <servlet-class>com.phoenixairlines.flightmanagement.controllers.DefaultFlightTableServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DefaultFlightTableServlet</servlet-name>
+        <url-pattern>/DefaultFlightTableServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>UpdateFlightServlet</servlet-name>
+        <servlet-class>com.phoenixairlines.flightmanagement.controllers.UpdateFlightServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateFlightServlet</servlet-name>
+        <url-pattern>/UpdateFlightServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ViewFlightServlet</servlet-name>
+        <servlet-class>com.phoenixairlines.flightmanagement.controllers.ViewFlightServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ViewFlightServlet</servlet-name>
+        <url-pattern>/ViewFlightServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ApproveUserServlet</servlet-name>
+        <servlet-class>com.phoenixairlines.usermanagement.controllers.ApproveUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ApproveUserServlet</servlet-name>
+        <url-pattern>/ApproveUserServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>BlockUserServlet</servlet-name>
+        <servlet-class>com.phoenixairlines.usermanagement.controllers.BlockUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BlockUserServlet</servlet-name>
+        <url-pattern>/BlockUserServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>MonitorTableServlet</servlet-name>
+        <servlet-class>com.phoenixairlines.usermanagement.controllers.MonitorTableServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MonitorTableServlet</servlet-name>
+        <url-pattern>/MonitorTableServlet</url-pattern>
+    </servlet-mapping>
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>com.phoenixairlines.controllers.user.LoginServlet</servlet-class>
+        <servlet-class>com.phoenixairlines.usermanagement.controllers.LoginServlet</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>LogoutServlet</servlet-name>
-        <servlet-class>com.phoenixairlines.controllers.user.LogoutServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>RegisterServlet</servlet-name>
-        <servlet-class>com.phoenixairlines.controllers.user.RegisterServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>SearchUsersStaffServlet</servlet-name>
-        <servlet-class>com.phoenixairlines.controllers.user.SearchUsersStaffServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>AdminTableServlet</servlet-name>
-        <servlet-class>com.phoenixairlines.controllers.user.AdminTableServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>UpdateFlightInfoServlet</servlet-name>
-        <servlet-class>com.phoenixairlines.controllers.flight.UpdateFlightInfoServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>DeleteFlightInfoServlet</servlet-name>
-        <servlet-class>com.phoenixairlines.controllers.flight.DeleteFlightInfoServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ViewFlightInfoServlet</servlet-name>
-        <servlet-class>com.phoenixairlines.controllers.flight.ViewFlightInfoServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>SearchFlightInfoServlet</servlet-name>
-        <servlet-class>com.phoenixairlines.controllers.flight.SearchFlightInfoServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>SelectTicketServlet</servlet-name>
-        <servlet-class>com.phoenixairlines.controllers.ticket.SelectTicketServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>CreateTicketServlet</servlet-name>
-        <servlet-class>com.phoenixairlines.controllers.ticket.CreateTicketServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>UpdateTicketServlet</servlet-name>
-        <servlet-class>com.phoenixairlines.controllers.ticket.UpdateTicketServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>DeleteTicketServlet</servlet-name>
-        <servlet-class>com.phoenixairlines.controllers.ticket.DeleteTicketServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>SearchUsersAdminServlet</servlet-name>
-        <servlet-class>com.phoenixairlines.controllers.user.SearchUsersAdminServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ApproveServlet</servlet-name>
-        <servlet-class>com.phoenixairlines.controllers.user.ApproveServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>GetSelectedData</servlet-name>
-        <servlet-class>com.phoenixairlines.controllers.flight.GetSelectedData</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>GetSelectedTicketData</servlet-name>
-        <servlet-class>com.phoenixairlines.controllers.ticket.GetSelectedTicketData</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>AddFlightInfoServlet</servlet-name>
-        <url-pattern>/AddFlightInfoServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>LogoutServlet</servlet-name>
-        <url-pattern>/LogoutServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>RegisterServlet</servlet-name>
-        <url-pattern>/RegisterServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>SearchUsersStaffServlet</servlet-name>
-        <url-pattern>/SearchUsersStaffServlet</url-pattern>
-    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>com.phoenixairlines.usermanagement.controllers.LogoutServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
-        <servlet-name>AdminTableServlet</servlet-name>
-        <url-pattern>/AdminTableServlet</url-pattern>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>RegisterUserServlet</servlet-name>
+        <servlet-class>com.phoenixairlines.usermanagement.controllers.RegisterUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterUserServlet</servlet-name>
+        <url-pattern>/RegisterUserServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>SearchUserTableServlet</servlet-name>
+        <servlet-class>com.phoenixairlines.usermanagement.controllers.SearchUserTableServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchUserTableServlet</servlet-name>
+        <url-pattern>/SearchUserTableServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>UpdateUserServlet</servlet-name>
+        <servlet-class>com.phoenixairlines.usermanagement.controllers.UpdateUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateUserServlet</servlet-name>
+        <url-pattern>/UpdateUserServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ViewUserServlet</servlet-name>
+        <servlet-class>com.phoenixairlines.usermanagement.controllers.ViewUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ViewUserServlet</servlet-name>
+        <url-pattern>/ViewUserServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>UpdateFlightInfoServlet</servlet-name>
-        <url-pattern>/UpdateFlightInfoServlet</url-pattern>
+        <servlet-name>ApproveTableServlet</servlet-name>
+        <url-pattern>/ApproveTableServlet</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>DeleteFlightInfoServlet</servlet-name>
-        <url-pattern>/DeleteFlightInfoServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ViewFlightInfoServlet</servlet-name>
-        <url-pattern>/ViewFlightInfoServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>SearchFlightInfoServlet</servlet-name>
-        <url-pattern>/SearchFlightInfoServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>SelectTicketServlet</servlet-name>
-        <url-pattern>/SelectTicketServlet</url-pattern>
-    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CreateTicketServlet</servlet-name>
+        <servlet-class>com.phoenixairlines.ticketmanagement.controllers.CreateTicketServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CreateTicketServlet</servlet-name>
         <url-pattern>/CreateTicketServlet</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>UpdateTicketServlet</servlet-name>
-        <url-pattern>/UpdateTicketServlet</url-pattern>
-    </servlet-mapping>
+    <servlet>
+        <servlet-name>DeleteTicketServlet</servlet-name>
+        <servlet-class>com.phoenixairlines.ticketmanagement.controllers.DeleteTicketServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>DeleteTicketServlet</servlet-name>
         <url-pattern>/DeleteTicketServlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>UpdateTicketServlet</servlet-name>
+        <servlet-class>com.phoenixairlines.ticketmanagement.controllers.UpdateTicketServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
-        <servlet-name>SearchUsersAdminServlet</servlet-name>
-        <url-pattern>/SearchUsersAdminServlet</url-pattern>
+        <servlet-name>UpdateTicketServlet</servlet-name>
+        <url-pattern>/UpdateTicketServlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>ViewTicketServlet</servlet-name>
+        <servlet-class>com.phoenixairlines.ticketmanagement.controllers.ViewTicketServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
-        <servlet-name>ApproveServlet</servlet-name>
-        <url-pattern>/ApproveServlet</url-pattern>
+        <servlet-name>ViewTicketServlet</servlet-name>
+        <url-pattern>/ViewTicketServlet</url-pattern>
     </servlet-mapping>
+
+
+
+
+
+    <servlet>
+        <servlet-name>SearchUsersStaffServlet</servlet-name>
+        <servlet-class>com.phoenixairlines.usermanagement.controllers.SearchUsersStaffServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
-        <servlet-name>GetSelectedData</servlet-name>
-        <url-pattern>/GetSelectedData</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>GetSelectedTicketData</servlet-name>
-        <url-pattern>/GetSelectedTicketData</url-pattern>
+        <servlet-name>SearchUsersStaffServlet</servlet-name>
+        <url-pattern>/SearchUsersStaffServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -3,6 +3,9 @@
 %>
 <jsp:forward page="/login.jsp"></jsp:forward>
 <%}%>
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -32,8 +35,8 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="admin_dashboard.jsp">Dashboard</a></li>
-                    <li><a href="admin_approve_table.jsp">Approve Staff</a></li>
+                    <li><a href="admin_dashboard.jsp">Dashboard</a></li>
+                    <li class="active"><a href="admin_approve_table.jsp">Approve Staff</a></li>
                     <li><a href="admin_monitor_table.jsp">Monitor Users</a></li>
                     <li><a href="all_profile.jsp">Profile</a></li>
                 </ul>
@@ -51,4 +54,42 @@
             </p>
         </div>
     </div>
+    <%
+        if ((request.getAttribute("approve_table") == null)) {
+            request.getRequestDispatcher("ApproveTableServlet").forward(request, response);
+        }
+    %>
+    <%
+        if ((request.getAttribute("approve_table") != null)) {
+            List data = new ArrayList();
+            data = (List) request.getAttribute("approve_table");
+            Iterator itr = data.iterator();
+    %>
+    <table border="1">
+        <thead>
+        <th>First Name</th>
+        <th>Last Name </th>
+        <th>User Type</th>
+        <th>Approve</th>
+    </thead>
+    <tbody>
+        <%while (itr.hasNext()) {%>
+    <form action="ApproveUserServlet" method="GET">
+        <tr>
+        <input type="hidden" name="user_id" value="<%=itr.next()%>" />
+        <td><%=itr.next()%></td>
+        <td><%=itr.next()%></td>
+        <td><%=itr.next()%></td>
+        <td><input type="submit" value="Approve" /></td>
+        </tr>
+    </form>
+    <%}%>
+</tbody>
+</table>
+<%}%>
+<%
+if ((request.getAttribute("result") != null)) {%>
+<h1><%=request.getAttribute("result")%></h1>
+<%}%>
+</body>
 </html>
