@@ -11,6 +11,12 @@ public class UpdateUserServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String first_name = request.getParameter("first_name");
+        String last_name = request.getParameter("last_name");
+        String username = request.getParameter("username");
+        String email = request.getParameter("email");
+        String address = request.getParameter("address");
+        String phone_number = request.getParameter("phone_number");
     }
 
     @Override

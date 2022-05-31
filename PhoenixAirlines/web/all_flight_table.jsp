@@ -43,14 +43,8 @@
         <form method="post" action="<%=request.getContextPath()%>/SearchFlightTableServlet">
             Select option to Search data  
             <input type="date" name="takeoff_date" value="" />
-            take off <select name="takeoff_airport">
-                <option value="AAL">AAL</option>
-                <option value="CMB">CMB</option>
-            </select>
-            landing <select name="landing_airport">
-                <option value="ABV">ABV</option>
-                <option value="CWL">CWL</option>
-            </select>
+            take off <input type="text" name="takeoff_airport" value="" />
+            landing <input type="text" name="landing_airport" value="" />
             <input type="submit" name="Search"/>
             <input type="reset" name="Cancel"/>
         </form>
@@ -80,7 +74,12 @@
         <th>Cost</th>
         <th>Aircraft</th>
         <th>View</th>
+            <%
+                if ((request.getSession(false).getAttribute("staffg1") != null)) {
+            %>
         <th>Delete</th>
+            <%}
+            %>
     </thead>
     <tbody>
         <% while (itr.hasNext()) {%>
@@ -98,18 +97,22 @@
         <td><%=itr.next()%></td>
         <td><input type="submit" value="View" formaction="<%=request.getContextPath()%>/ViewFlightServlet"/>
         </td>
-        <td><input type="submit" value="Delete" formaction="<%=request.getContextPath()%>/DeleteFlightServlet"/>
-        </td>
+        <%
+            if ((request.getSession(false).getAttribute("staffg1") != null)) {
+        %>
+        <td><input type="submit" value="Delete" formaction="<%=request.getContextPath()%>/DeleteFlightServlet"/></td>
+            <%}
+            %>
     </form>
 </tr>
 <%}
-        }%>
+    }%>
 </tbody>
 </table>
 <%
-if ((request.getAttribute("result") != null)) {%>
+    if ((request.getAttribute("result") != null)) {%>
 <h1><%=request.getAttribute("result")%></h1>
 <%}%>
-
+<jsp:include page="assets/footer.jsp" />  
 </body>
 </html>

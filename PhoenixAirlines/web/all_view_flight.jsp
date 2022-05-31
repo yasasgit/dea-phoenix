@@ -116,6 +116,7 @@
         </table>
     </form> 
     <%}
-            }%>
+        }%>
+    <jsp:include page="assets/footer.jsp" />  
 </body>
 </html>

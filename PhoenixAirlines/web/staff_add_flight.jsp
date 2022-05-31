@@ -21,5 +21,6 @@
             <input type="submit" name="Add Flight"/>
             <input type="reset" name="Cancel"/>
         </form>
+        <jsp:include page="assets/footer.jsp" />  
     </body>
 </html>

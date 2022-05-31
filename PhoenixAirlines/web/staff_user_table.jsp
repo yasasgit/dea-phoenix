@@ -48,5 +48,6 @@
                     }%>
             </tbody>
         </table>
+        <jsp:include page="assets/footer.jsp" />  
     </body>
 </html>

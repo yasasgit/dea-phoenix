@@ -16,11 +16,7 @@ public class RegisterUserServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
-        System.out.println("inside post");
-        response.setContentType("text/html");
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String first_name = request.getParameter("first_name");
         String last_name = request.getParameter("last_name");

@@ -10,7 +10,7 @@
     </head>
     <body>
         <h1>Sign Up</h1>
-        <form name="register" action="<%=request.getContextPath()%>/RegisterServlet" method="POST">
+        <form name="register" action="<%=request.getContextPath()%>/RegisterUserServlet" method="POST">
             <fieldset>
                 <legend><span class="number">1</span>Your basic details</legend>
                 <label for="name">First Name:</label>
@@ -44,5 +44,6 @@
                 <button type="submit" value="Sign Up">Sign Up</button>
             </fieldset>
         </form>
+        <jsp:include page="assets/footer.jsp" />  
     </body>
 </html>

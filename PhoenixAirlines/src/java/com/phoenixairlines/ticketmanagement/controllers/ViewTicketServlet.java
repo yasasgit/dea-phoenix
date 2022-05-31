@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 public class ViewTicketServlet extends HttpServlet {
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //view + searchbyuser can be accessed by only g1staff g2staff
         //view can be accessed by only client
         TicketAccess ticketAccess = new TicketAccess();
@@ -27,7 +27,7 @@ public class ViewTicketServlet extends HttpServlet {
 
         List reservationValues = ticketAccess.selectTicket(userId);
         request.setAttribute("reservationResult", reservationValues);
-        RequestDispatcher rd = request.getRequestDispatcher("userMyReservation.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("client_ticket_table.jsp");
         rd.forward(request, response);
 
         String ticket_id = request.getParameter("ticket_id");

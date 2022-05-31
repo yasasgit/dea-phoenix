@@ -7,22 +7,26 @@
         <servlet-name>CreateFlightServlet</servlet-name>
         <servlet-class>com.phoenixairlines.flightmanagement.controllers.CreateFlightServlet</servlet-class>
     </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateFlightServlet</servlet-name>
+        <url-pattern>/CreateFlightServlet</url-pattern>
+    </servlet-mapping>
     <servlet>
         <servlet-name>ApproveTableServlet</servlet-name>
         <servlet-class>com.phoenixairlines.usermanagement.controllers.ApproveTableServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>CreateFlightServlet</servlet-name>
-        <url-pattern>/CreateFlightServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>SearchFlightTableServlet</servlet-name>
-        <url-pattern>/SearchFlightTableServlet</url-pattern>
+        <servlet-name>ApproveTableServlet</servlet-name>
+        <url-pattern>/ApproveTableServlet</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>SearchFlightTableServlet</servlet-name>
         <servlet-class>com.phoenixairlines.flightmanagement.controllers.SearchFlightTableServlet</servlet-class>
     </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchFlightTableServlet</servlet-name>
+        <url-pattern>/SearchFlightTableServlet</url-pattern>
+    </servlet-mapping>
     <servlet>
         <servlet-name>DeleteFlightServlet</servlet-name>
         <servlet-class>com.phoenixairlines.flightmanagement.controllers.DeleteFlightServlet</servlet-class>
@@ -127,11 +131,14 @@
         <servlet-name>ViewUserServlet</servlet-name>
         <url-pattern>/ViewUserServlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>SearchUsersStaffServlet</servlet-name>
+        <servlet-class>com.phoenixairlines.usermanagement.controllers.SearchUsersStaffServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
-        <servlet-name>ApproveTableServlet</servlet-name>
-        <url-pattern>/ApproveTableServlet</url-pattern>
+        <servlet-name>SearchUsersStaffServlet</servlet-name>
+        <url-pattern>/SearchUsersStaffServlet</url-pattern>
     </servlet-mapping>
-    
     <servlet>
         <servlet-name>CreateTicketServlet</servlet-name>
         <servlet-class>com.phoenixairlines.ticketmanagement.controllers.CreateTicketServlet</servlet-class>
@@ -163,19 +170,6 @@
     <servlet-mapping>
         <servlet-name>ViewTicketServlet</servlet-name>
         <url-pattern>/ViewTicketServlet</url-pattern>
-    </servlet-mapping>
-
-
-
-
-
-    <servlet>
-        <servlet-name>SearchUsersStaffServlet</servlet-name>
-        <servlet-class>com.phoenixairlines.usermanagement.controllers.SearchUsersStaffServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>SearchUsersStaffServlet</servlet-name>
-        <url-pattern>/SearchUsersStaffServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

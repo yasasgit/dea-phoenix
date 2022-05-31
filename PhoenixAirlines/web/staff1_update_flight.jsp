@@ -23,5 +23,6 @@
                 <input type="reset" name="Cancel"/>
             </form>
         </div>
+        <jsp:include page="assets/footer.jsp" />  
     </body>
 </html>

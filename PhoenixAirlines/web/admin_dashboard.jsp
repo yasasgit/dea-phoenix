@@ -51,4 +51,5 @@
             </p>
         </div>
     </div>
+    <jsp:include page="assets/footer.jsp" />  
 </html>
